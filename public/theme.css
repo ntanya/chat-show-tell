@@ -1,0 +1,277 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body {
+	background-color: #EDEFF5;
+	font-family: Arial, Helvetica,sans-serif;
+}
+
+
+/*-- message styles ---*/
+.msg{font-size:14px;padding:5px;}
+.msgheader{font-weight:bold;padding:5px;color:#2480db;}
+.msgheaderred{font-weight:bold;padding:5px;color:#ea4721}
+.timestamp{float:right;color:#ccc;font-weight:normal;font-size:12px;}
+.msg p{padding:5px;}
+
+h1 {
+	color: #666;
+	font-size: 32px;
+	font-weight: 100;
+	margin: -6px 0 0 0;
+	padding: 0 0 4px 0;
+}
+
+h2 {
+	color: #2580DB;
+	font-size: 18px;
+	font-weight: 100;
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+.header {
+	background: #000 url('images/headerbg.png') repeat-x;
+	color: white;
+	height: 44px;
+	width: 100%;
+}
+
+.headerarea {
+	margin: 0px auto;
+	padding: 0 12px 0 12px;
+	width: 1200px;
+	font-size: 14px;
+	font-weight: 500;
+}
+
+.headerlcontainer {
+	float: left;
+	width: 800px;
+}
+
+.headerrcontainer {
+	float: right;
+	text-align: right;
+	width: 400px;
+}
+
+.headeritems {
+	background: url('images/divider.png') no-repeat right;
+	float: left;
+	height: 100%;
+	color: #ccc;
+}
+
+.headeritemsr {
+	float: right;
+	height: 100%;
+	padding: 13px 0 0 12px;
+	font-weight: bold;
+	color: #ccc;	
+}
+
+.headeritemsrimg {
+	float: right;
+	height: 100%;
+	padding: 6px 0 0 12px;
+}
+
+.avatar {
+	background-color: black;
+	float: left;
+	height: 30px;
+	width: 30px;
+}
+
+.radius {
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+.headeritemsrimg {
+	float: right;
+	height: 100%;
+	padding: 6px 0 0 12px;
+}
+
+.headeritemsrimg:hover {
+	filter:alpha(opacity=50); /* For IE8 and earlier */
+	opacity:0.5;
+}
+
+.headerhover:hover {
+	background: url('images/headerbghover.png') repeat-x;
+}
+
+.selected {
+	background: url('images/headerbghover.png') repeat-x;
+	font-weight: bold;
+	color: #fff;
+}
+
+.headerlogo:hover img{
+	filter:alpha(opacity=50); /* For IE8 and earlier */
+	opacity:0.5;
+}
+
+.headerlogo {
+	padding: 11px 12px 0 0;
+}
+
+.headerselections {
+	padding: 13px 12px 0 12px;
+}
+
+.content {
+	height: 100%;
+	margin: 0px auto;
+	padding: 0 12px 0 12px;
+	width: 1200px;
+}
+
+.contentarea {
+	background-color: #fff;
+	height: 100%;
+	margin: 16px 0 0 0;
+}
+
+.contentarealeft {
+	background: #fff url('images/corner.png') no-repeat top left;
+	border: 1px 0 0 1px solid #EBEDF3;
+	float: left;
+	height: 100%;
+	width: 960px;
+}
+
+.contentarearight {
+	background: #DEE2ED url('images/cornerr.png') no-repeat top right;
+	border: 1px 1px 0 0 solid #EBEDF3;
+	float: right;
+	height: 100%;
+	width: 238px;
+}
+
+.textarea {
+	padding: 20px 20px 0 20px;
+}
+
+.topmsg {
+	margin-bottom: 10px;
+	padding-bottom: 12px;
+}
+
+.msgarea {
+}
+
+.msgbox {
+	border: 1px solid #ddd;
+	color: #888;
+	font-size: 13px;
+	margin-bottom: 20px;
+	padding: 7px 0 9px 7px;
+	width: 820px;
+	margin-right:15px;
+}
+
+.msgcontainer {
+	line-height: 18px;
+	width: 100%;
+	font-size: 14px;
+}
+
+.msguser {
+	color: #2580DB;
+	float: left;
+	font-weight: bold;
+	margin: -4px 0 0 0;
+	padding-left: 20px;
+	width: 670px;
+}
+
+.msgtime {
+	color: #aaa;
+	float: left;
+	font-size: 12px;
+	margin: -4px 0 0 0;
+	text-align: right;
+	width: 200px;
+}
+
+.msg {
+	float: left;
+	margin: 2px 0 0 0;
+	padding: 0 0 20px 20px;
+	width: 870px;
+}
+
+.self {
+	color: #EB4823;
+}
+
+.sidebar {
+	color: black;
+	padding: 0 0 12px 0;
+}
+
+ul.sidebar {
+	color: #666;
+	font-size: 13px;
+	font-weight: normal;
+	line-height: 20px;
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+ul.sidebar li {
+}

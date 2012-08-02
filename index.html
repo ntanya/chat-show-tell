@@ -1,7 +1,12 @@
+<head>
+
+<title>Lead Messenger</title>
+<link rel="stylesheet" type="text/css" href="/theme.css" />
 <script src="/socket.io/socket.io.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
 <script>
 	var socket = io.connect('http://node-chat-test.herokuapp.com/');
+	//var socket = io.connect('localhost');
 
 	// on connection to server, ask for user's name with an anonymous callback
 	socket.on('connect', function(){
@@ -10,15 +15,15 @@
 	});
 
 	// listener, whenever the server emits 'updatechat', this updates the chat body
-	socket.on('updatechat', function (username, data) {
-		$('#conversation').append('<b>'+username + ':</b> ' + data + '<br>');
+	socket.on('updatechat', function (timestamp, username, data, altcolor) {
+		$('#conversation').prepend('<div class="msg"><div class="msgheader'+altcolor+'"><span class="username">' + username + '</span><span class="timestamp">' + timestamp + '</span></div><p>' + data + '</p></div>');
 	});
 
 	// listener, whenever the server emits 'updateusers', this updates the username list
 	socket.on('updateusers', function(data) {
 		$('#users').empty();
 		$.each(data, function(key, value) {
-			$('#users').append('<div>' + key + '</div>');
+			$('#users').prepend('<li>' + key + '</li>');
 		});
 	});
 
@@ -39,15 +44,139 @@
 				$('#datasend').focus().click();
 			}
 		});
+		
+		$('#clearchat').click(function(){
+			$('#conversation').html('');
+		});
+		
+		$('#data').focus(function(){
+			$(this).val('');
+		});
 	});
 
 </script>
-<div style="float:left;width:100px;border-right:1px solid black;height:300px;padding:10px;overflow:scroll-y;">
-	<b>USERS</b>
-	<div id="users"></div>
-</div>
-<div style="float:left;width:300px;height:250px;overflow:scroll-y;padding:10px;">
-	<div id="conversation"></div>
-	<input id="data" style="width:200px;" />
-	<input type="button" id="datasend" value="send" />
-</div>
+</head>
+
+<body>
+
+	<div class="container">
+
+		<div class="header">
+
+			<div class="headerarea">
+
+				<div class="headerlcontainer">
+
+					<div class="headeritems">
+						<div class="headerlogo">
+							<img src="images/lmlogo.png" />
+						</div>
+					</div>
+
+					<div class="headeritems headerhover">
+						<p class="headerselections">Companies</p>
+					</div>
+
+					<div class="headeritems headerhover">
+						<p class="headerselections">Flows</p>
+					</div>
+
+					<div class="headeritems headerhover">
+						<p class="headerselections">Campaigns</p>
+					</div>
+
+					<div class="headeritems headerhover">
+						<p class="headerselections">Reports</p>
+					</div>
+
+					<div class="headeritems headerhover">
+						<p class="headerselections">Tools</p>
+					</div>
+
+					<div class="headeritems headerhover selected">
+						<p class="headerselections">Messenger</p>
+					</div>
+
+				</div>
+
+				<div class="headerrcontainer">
+					<div class="headeritemsrimg"><div class="avatar radius" style="background-image: url('http://community.partnerpedia.com/system/users/pictures/5495/one/Saubhik-Pic-small.jpg');"></div></div>
+					<div class="headeritemsr">Sean Cullen</div>
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="content">
+
+			<div class="contentarea">
+
+				<div class="contentarealeft">
+
+					<div class="textarea">
+
+						<h1>This is Lead Messenger, our social interaction simulator.</h1>
+						<h2 class="topmsg">What better way to hear the voice of the people? Start typing below to join the conversation.</h2>
+
+						<input id="data" class="msgbox" value="Type your message here…"/><input type="button" id="datasend" value="send" />
+
+						<div id="conversation" class="msgarea">
+
+							
+
+							<!--<div class="msgcontainer">
+								<div class="avatar radius" style="background-image: url('http://media.giantbomb.com/uploads/0/5698/186138-profile_pic_tiny.jpg');"></div>
+								<p class="msguser">Tanya Nam</p>
+								<p class="msgtime">3:02 pm</p>
+								<p class="msg">how are you doing? this is a test msg.</p>
+							</div>
+
+							<div id="conversation" class="msgcontainer">
+
+								<div class="avatar radius" style="background-image: url('http://community.partnerpedia.com/system/users/pictures/5495/one/Saubhik-Pic-small.jpg');"></div>
+
+								<p class="msguser self">Sean Cullen</p>
+								<p class="msgtime">3:01 pm</p>
+								<p class="msg">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+							</div>
+
+							<div class="msgcontainer">
+								<div class="avatar radius" style="background-image: url('http://pre.cloudfront.goodinc.com/users/mini-1265739779-profile.pic.jpg');"></div>
+								<p class="msguser">Adam Reynolds</p>
+								<p class="msgtime">2:59 pm</p>
+								<p class="msg">This is stupid.</p>
+							</div>
+							
+							-->
+
+						</div>
+
+					</div>
+
+				</div>
+
+				<div class="contentarearight">
+
+					<div class="textarea">
+
+						<h2 class="sidebar" style="font-weight: bold; color: #666;">Users</h2>
+
+						<ul id="users" class="sidebar">
+
+						</ul>
+
+						<input type="button" id="clearchat" value="Clear conversation"/>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</body>
